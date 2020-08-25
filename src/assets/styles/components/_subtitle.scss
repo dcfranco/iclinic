@@ -1,0 +1,26 @@
+h2 {
+  font-weight: 300;
+  word-wrap: normal;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 3vw;
+  line-height: 4vw;
+  margin-top: 2vw;
+}
+
+@include media-breakpoint-up('sm') {
+  h2 {
+    font-size: 1.3vw !important;
+    line-height: 1vw !important;
+    margin-top: 8px !important;
+  }
+}
+
+@include media-breakpoint-up('xl') {
+  h2 {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    margin-top: 8px !important;
+  }
+}

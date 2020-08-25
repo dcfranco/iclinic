@@ -1,0 +1,63 @@
+.Image {
+  border-radius: 100% !important;
+  overflow: hidden;
+  border: 2px solid $dark;
+
+  &.blink-dark {
+    -webkit-animation: k-blink-dark 2.0s linear infinite;
+    -moz-animation: k-blink-dark 2.0s linear infinite;
+    -ms-animation: k-blink-dark 2.0s linear infinite;
+    -o-animation: k-blink-dark 2.0s linear infinite;
+    animation: k-blink-dark 2.0s linear infinite;
+  }
+
+  &.blink-white {
+    -webkit-animation: k-blink-white 2.0s linear infinite;
+    -moz-animation: k-blink-white 2.0s linear infinite;
+    -ms-animation: k-blink-white 2.0s linear infinite;
+    -o-animation: k-blink-white 2.0s linear infinite;
+    animation: k-blink-white 2.0s linear infinite;
+  }
+
+
+  img {
+    @include no-select();
+    max-width: 80vw;
+  }
+}
+
+@include media-breakpoint-up('sm') {
+  .Image{
+    max-width: 90vw;
+  }
+}
+
+@include media-breakpoint-up('xl') {
+  .Image{
+    max-width: 100vw;
+  }
+}
+
+@keyframes k-blink-dark {
+  0% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 0.5); }
+  50% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 1); }
+  100% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 0.5); }
+}
+
+@-webkit-keyframes k-blink-dark {
+  0% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 0.5); }
+  50% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 1); }
+  100% { box-shadow: 0px 0px 8px 5px rgba($color: $dark, $alpha: 0.5); }
+}
+
+@keyframes k-blink-white {
+  0% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.2); }
+  50% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.8); }
+  100% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.2); }
+}
+
+@-webkit-keyframes k-blink-white {
+  0% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.2); }
+  50% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.8); }
+  100% { box-shadow: 0px 0px 8px 3px rgba($color: $white, $alpha: 0.2); }
+}

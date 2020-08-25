@@ -1,0 +1,111 @@
+.Page {
+  color: $primary;
+  padding: 85px 20px 15px;
+  margin: 0;
+  width: inherit;
+  height: inherit;
+  @include flexbox($align: center, $justify:center, $direction: column);
+  
+  .page-back {
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: $dark;
+    text-decoration: none;
+    transition: all ease-in-out 0.1s;
+    span {
+      display: block;
+      line-height: 22px;
+      font-size: 18px !important;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+    svg {
+      width: 30px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &.bg-yellow {
+    .page-back {
+      span {
+        color: $dark;
+      }
+      svg {
+        fill: $dark;
+      }
+    }
+  }
+
+  &.bg-secondary {
+    .page-back {
+      span {
+        color: $white;
+      }
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &.Master {
+    position: relative;
+
+    h3 {
+      font-size: 30px !important;
+      white-space: wrap !important;
+      line-height: 40px !important;
+      text-align: center;
+      text-overflow: clip;
+    }
+
+    button {
+      position: absolute;
+      top: 85%;
+      margin: 0px auto;
+      font-size: 14px !important;
+    }
+  }
+
+  @media screen and (max-height: 420px) {
+    padding-top: 10vh;
+
+    .Image {
+      visibility: hidden;
+      max-height: 20vh !important;
+    }
+    
+    h1 {
+      margin-top: map-get($spacers, 2) !important;
+    }
+    
+    button:not(.btn-dark):not(.btn-white) {
+      margin-top: map-get($spacers, 4) !important;
+    }
+  }
+}
+
+@include media-breakpoint-up('sm') {
+  .Page {
+    .page-back {
+      top: 40px;
+      left: 40px;
+    }
+
+    &.Master{
+      position: unset;
+      button {
+        position: unset;
+        margin: unset;
+        font-size: unset;
+        top: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+h3 {
+  margin: 0px;
+  font-size: 5.5vw;
+  line-height: 5.5vw;
+  display: inline-block;
+  word-wrap: normal;
+  font-weight: normal;
+}
+
+@include media-breakpoint-up('sm') {
+  h3 {
+    font-size: 4vw !important;
+    line-height: 6vw !important;
+  }
+}
+
+
+@include media-breakpoint-up('xl') {
+  h3 {
+    font-size: 30px !important;
+    line-height: 45px !important;
+  }
+}
+
+.text-secondary {
+  color: $dark;
+}
+
+.text-white {
+  color: $white;
+}

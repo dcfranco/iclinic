@@ -1,0 +1,80 @@
+button {
+  @include button($primary, $white);
+  padding: 10px 35px !important;
+  font-size: 3vw !important;
+
+  .spinner {
+    display: inline;
+    position: relative;
+    padding: 10px 20px;
+
+    &:before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+      border-radius: 50%;
+      border: 2px solid $primary;
+      border-top-color: $white;
+      animation: spinner .6s linear infinite;
+    }
+  }
+
+
+  &.btn-secondary {
+    background-color: $dark;
+    border-color: $dark !important;
+    color: $yellow !important;
+    letter-spacing: 1px !important;
+
+    .spinner {
+      background-color: $dark;
+      &:before {
+        border-color: $dark;
+        border-top-color: $white;
+      }
+    }
+  }
+
+  &.btn-white {
+    background-color: $white;
+    border-color: $white !important;
+    color: $dark !important;
+    letter-spacing: 1px !important;
+
+    .spinner {
+      background-color: $white;
+      &:before {
+        border-color: $white;
+        border-top-color: $dark;
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-up('sm') {
+  button {
+    font-size: 1.5vw !important;
+    padding: 12px 35px !important;
+    letter-spacing: 4px !important;
+  }
+}
+
+@include media-breakpoint-up('xl') {
+  button {
+    font-size: 16px !important;
+    padding: 10px 35px !important;
+    letter-spacing: 4px !important;
+  }
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
